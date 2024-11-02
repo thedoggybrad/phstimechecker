@@ -76,7 +76,7 @@ $ntpTimestamp = getNTPTime();
         }
 
         // Function to cycle background color
-        const colors = ['#61dafb', '#21a1f1', '#282c34', '#fff', '#61dafb']; // Add any colors you want to cycle through
+        const colors = ['#61dafb', '#21a1f1', '#ffffff', '#f39c12', '#e74c3c']; // Excludes #282c34
         let currentColorIndex = 0;
 
         function cycleColors() {
