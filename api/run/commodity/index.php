@@ -3,8 +3,8 @@
 
 function getNTPTime($host = 'ntp.pagasa.dost.gov.ph') {
     $ntpServer = $host;
-    $port = 123; // NTP operates on port 123
-    $timeout = 1; // Timeout in seconds
+    $port = 123; 
+    $timeout = 1; 
 
     // Create a socket
     $socket = socket_create(AF_INET, SOCK_DGRAM, SOL_UDP);
@@ -34,7 +34,7 @@ $ntpTimestamp = getNTPTime();
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NTP Time</title>
+    <title>Philippine Standard Time</title>
     <style>
         body {
             display: flex;
@@ -43,29 +43,29 @@ $ntpTimestamp = getNTPTime();
             align-items: center;
             height: 100vh;
             font-family: Arial, sans-serif;
-            background-color: #282c34; /* Darker background */
-            color: #fff; /* White text color */
-            margin: 0; /* Remove default margin */
+            background-color: #282c34; 
+            color: #fff; 
+            margin: 0; 
         }
         #clock {
-            text-align: center; /* Center the text */
-            font-size: 2rem; /* Large font size for the clock */
-            padding: 20px; /* Padding around the clock */
-            border: 2px solid #fff; /* White border around the clock */
-            border-radius: 10px; /* Rounded corners */
-            background-color: #61dafb; /* Light blue background */
-            color: #282c34; /* Dark text color */
-            font-weight: bold; /* Make text bold */
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Soft shadow effect */
-            transition: background-color 0.3s; /* Smooth background transition */
+            text-align: center; 
+            font-size: 4rem; 
+            padding: 20px; 
+            border: 2px solid #fff; 
+            border-radius: 10px; 
+            background-color: #61dafb; 
+            color: #282c34; 
+            font-weight: bold;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); 
+            transition: background-color 0.3s; 
         }
         #clock:hover {
-            background-color: #21a1f1; /* Change background color on hover */
+            background-color: #21a1f1; 
         }
     </style>
     <script>
         // Get the initial NTP timestamp from PHP
-        const initialTimestamp = <?= $ntpTimestamp ?> * 1000; // Convert to milliseconds
+        const initialTimestamp = <?= $ntpTimestamp ?> * 1000; 
         const offset = Date.now() - initialTimestamp;
 
         function updateClock() {
@@ -79,12 +79,13 @@ $ntpTimestamp = getNTPTime();
             document.getElementById('clock').innerHTML = formattedTime + '<br>' + formattedDate + '<br>' + formattedDay;
         }
 
-        setInterval(updateClock, 1000); // Update every second
-        updateClock(); // Initial call to display the time immediately
+        setInterval(updateClock, 1000); 
+        updateClock(); 
     </script>
 </head>
 <body>
-    <h1>NTP Time</h1>
+    <h1>Philippine Standard Time</h1>
     <div id="clock"></div>
+    <p style="margin-top: 30px;">Time brought to you by Time Service Unit of the Philippine Atmospheric, Geophysical and Astronomical Services Administration via its NTP server.</p>
 </body>
 </html>
