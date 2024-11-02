@@ -55,18 +55,26 @@ a:link, a:visited, a:active, a:hover {
 
 h1 {
     font-size: 2rem;
+    text-align: center; 
 }
 
-/* Media queries for mobile */
 @media (max-width: 600px) {
     #clock {
-        font-size: 2rem; /* Adjust font size on mobile */
+        font-size: 2rem; 
     }
 
     h1 {
-        font-size: 1.5rem; /* Adjust heading size on mobile */
+        font-size: 1.5rem; 
     }
 }
+
+@media (orientation: landscape) and (max-width: 600px) {
+    h1 {
+        font-size: 1.8rem;
+        margin-bottom: 10px; 
+    }
+}
+
     </style>
     <script>
         const initialTimestamp = <?= $ntpTimestamp ?> * 1000;
