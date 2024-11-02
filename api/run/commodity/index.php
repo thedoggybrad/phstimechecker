@@ -47,6 +47,11 @@ $ntpTimestamp = getNTPTime();
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); 
             transition: background-color 0.3s; 
         }
+
+       a:link, a:visited, a:active, a:hover{
+            color: #fff;
+        }
+
     </style>
     <script>
         const initialTimestamp = <?= $ntpTimestamp ?> * 1000;
