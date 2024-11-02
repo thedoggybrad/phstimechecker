@@ -1,4 +1,5 @@
 <?php
+error_reporting(0);
 function getNTPTime($host = 'ntp.pagasa.dost.gov.ph') {
     $ntpServer = $host;
     $port = 123; 
@@ -105,7 +106,7 @@ h1 {
     </script>
 </head>
 <body>
-    <h1 style="text-align: center; margin-top: 30px; ">Philippine Standard Time (PhST)</h1>
+    <h1 style="text-align: center;">Philippine Standard Time (PhST)</h1>
     <div id="clock">Please Wait.....</div>
     <p style="margin-top: 30px; margin-bottom: 20px;  text-align: center;">The time brought to you by <a href="https://www.pagasa.dost.gov.ph/astronomy">TSU-PAGASA</a> via their NTP server.<br>
     ©TheDoggyBrad Software Labs. Licensed under the <a href="https://github.com/thedoggybrad/pagasatimechecker/blob/main/LICENSE">MIT-0 License</a>.
