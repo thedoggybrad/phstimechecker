@@ -33,7 +33,6 @@ $ntpTimestamp = getNTPTime();
     font-family: Arial, sans-serif;
     background-color: #282c34; 
     color: #fff; 
-    margin: 0; 
 }
 
 #clock {
