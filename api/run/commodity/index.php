@@ -80,6 +80,13 @@ a:link, a:visited, a:active, a:hover {
         margin-bottom: 10px; 
     }
 }
+
+@media (orientation: landscape) and (max-height: 400px) {
+    body {
+        margin-top: 30px;
+    }
+}
+
     </style>
     <script>
         const initialTimestamp = <?= $ntpTimestamp ?> * 1000;
