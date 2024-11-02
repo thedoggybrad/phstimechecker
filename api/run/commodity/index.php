@@ -85,6 +85,9 @@ a:link, a:visited, a:active, a:hover {
     body {
         margin-top: 70px;
     }
+    p {
+        margin-bottom: 40px;
+    }
 }
 
     </style>
