@@ -84,7 +84,7 @@ $ntpTimestamp = getNTPTime();
 <body>
     <h1>Philippine Standard Time</h1>
     <div id="clock">Please Wait.....</div>
-    <p style="margin-top: 30px;">The time brought to you by <a href="https://www.pagasa.dost.gov.ph/astronomy">TSU-PAGASA</a> via their NTP server.<br>
+    <p style="margin-top: 30px; text-align: center;">The time brought to you by <a href="https://www.pagasa.dost.gov.ph/astronomy">TSU-PAGASA</a> via their NTP server.<br>
     ©TheDoggyBrad Software Labs. Licensed under the <a href="https://github.com/thedoggybrad/pagasatimechecker/blob/main/LICENSE">MIT-0 License</a>.
     </p>
 </body>
