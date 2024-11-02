@@ -124,7 +124,7 @@ a:link, a:visited, a:active, a:hover {
         <div id="clock">Please Wait.....</div>
         <p style="margin-top: 30px; margin-bottom: 30px; text-align: center;">
             Time data brought to you by <a href="https://www.pagasa.dost.gov.ph/astronomy">TSU-PAGASA</a>.<br>
-            ©TheDoggyBrad Software Labs. <a href="https://github.com/thedoggybrad/pagasatimechecker/blob/main/LICENSE">MIT-0 License</a>.
+            ©<a href="https://github.com/thedoggybrad/phstimechecker">TheDoggyBrad Software Labs</a>. <a href="https://github.com/thedoggybrad/phstimechecker/blob/main/LICENSE">MIT-0 License</a>.
         </p>
     </div>
 </body>
