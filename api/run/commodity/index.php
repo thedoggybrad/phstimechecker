@@ -24,7 +24,7 @@ $ntpTimestamp = getNTPTime();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Philippine Standard Time (PhST) by TheDoggyBrad Software Labs</title>
     <style>
-body {
+  body {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -34,7 +34,6 @@ body {
     background-color: #282c34; 
     color: #fff; 
     margin: 0;
-    overflow: croll; 
 }
 
 #clock {
@@ -56,28 +55,18 @@ a:link, a:visited, a:active, a:hover {
 
 h1 {
     font-size: 2rem;
-    margin-bottom: 20px; 
 }
 
+/* Media queries for mobile */
 @media (max-width: 600px) {
-    body {
-        justify-content: flex-start; 
-    }
-
     #clock {
-        font-size: 2rem; 
+        font-size: 2rem; /* Adjust font size on mobile */
     }
 
     h1 {
-        font-size: 1.5rem;
-    }
-
-    p {
-        margin-top: 20px;
-        margin-bottom: 20px; 
+        font-size: 1.5rem; /* Adjust heading size on mobile */
     }
 }
-
     </style>
     <script>
         const initialTimestamp = <?= $ntpTimestamp ?> * 1000;
@@ -108,9 +97,9 @@ h1 {
     </script>
 </head>
 <body>
-    <h1 style="text-align: center;">Philippine Standard Time (PhST)</h1>
+    <h1 style="text-align: center; margin-top: 30px; ">Philippine Standard Time (PhST)</h1>
     <div id="clock">Please Wait.....</div>
-    <p style="margin-top: 30px; text-align: center;">The time brought to you by <a href="https://www.pagasa.dost.gov.ph/astronomy">TSU-PAGASA</a> via their NTP server.<br>
+    <p style="margin-top: 30px; margin-bottom: 20px;  text-align: center;">The time brought to you by <a href="https://www.pagasa.dost.gov.ph/astronomy">TSU-PAGASA</a> via their NTP server.<br>
     ©TheDoggyBrad Software Labs. Licensed under the <a href="https://github.com/thedoggybrad/pagasatimechecker/blob/main/LICENSE">MIT-0 License</a>.
     </p>
 </body>
