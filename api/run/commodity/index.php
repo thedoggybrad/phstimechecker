@@ -84,10 +84,9 @@ a:link, a:visited, a:active, a:hover {
 @media (orientation: landscape) and (max-height: 400px) {
     body {
         margin-top: 70px;
+        margin-bottom: 30px;
     }
-    p {
-        margin-bottom: 40px;
-    }
+    
 }
 
     </style>
