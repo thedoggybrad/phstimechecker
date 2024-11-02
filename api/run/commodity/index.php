@@ -39,6 +39,7 @@ body {
 
 h1 {
     margin-bottom: 20px; 
+    overflow: auto;
 }
 
 #clock {
@@ -53,6 +54,7 @@ h1 {
     font-weight: bold;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); 
     transition: background-color 0.3s; 
+    overflow: auto;
 }
 
 
