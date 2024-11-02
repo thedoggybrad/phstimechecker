@@ -65,11 +65,10 @@ $ntpTimestamp = getNTPTime();
     </style>
     <script>
         // Get the initial NTP timestamp from PHP
-        const initialTimestamp = <?= $ntpTimestamp ?> * 1000; 
-        const offset = Date.now() - initialTimestamp;
+        const initialTimestamp = <?= $ntpTimestamp ?> * 1000; // Already in UTC+8
 
         function updateClock() {
-            const currentTime = new Date(Date.now() - offset);
+            const currentTime = new Date(initialTimestamp + (Date.now() - initialTimestamp));
             const optionsTime = { hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: true };
             const formattedTime = currentTime.toLocaleString('en-US', optionsTime);
             const optionsDate = { month: 'long', day: '2-digit', year: 'numeric' };
@@ -85,7 +84,7 @@ $ntpTimestamp = getNTPTime();
 </head>
 <body>
     <h1>Philippine Standard Time</h1>
-    <div id="clock"></div>
+    <div id="clock">Please Wait.....</div>
     <p style="margin-top: 30px;">Time brought to you by Time Service Unit of the Philippine Atmospheric, Geophysical and Astronomical Services Administration via its NTP server.</p>
 </body>
 </html>
