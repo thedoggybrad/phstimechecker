@@ -1,6 +1,6 @@
 {
   "functions": {
-    "api/run/commodity/intellect.php": {
+    "api/run/commodity/index.php": {
       "runtime": "vercel-php@0.7.3",
       "maxDuration": 60
     }
