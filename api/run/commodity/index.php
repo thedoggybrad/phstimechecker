@@ -34,7 +34,7 @@ body {
     background-color: #282c34; 
     color: #fff; 
     margin: 0;
-    overflow: hidden; 
+    overflow: croll; 
 }
 
 #clock {
