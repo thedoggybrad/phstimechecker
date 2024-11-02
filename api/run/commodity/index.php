@@ -24,38 +24,49 @@ $ntpTimestamp = getNTPTime();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Philippine Standard Time (PhST) by TheDoggyBrad Software Labs</title>
     <style>
-        body {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            font-family: Arial, sans-serif;
-            background-color: #282c34; 
-            color: #fff; 
-            margin: 0; 
-        }
-        #clock {
-            text-align: center; 
-            font-size: 4rem; 
-            padding: 20px; 
-            border: 2px solid #fff; 
-            border-radius: 10px; 
-            background-color: #61dafb; 
-            color: #282c34; 
-            font-weight: bold;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); 
-            transition: background-color 0.3s; 
-        }
+  body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-family: Arial, sans-serif;
+    background-color: #282c34; 
+    color: #fff; 
+    margin: 0; 
+}
 
-       a:link, a:visited, a:active, a:hover{
-            color: #fff;
-        }
+#clock {
+    text-align: center; 
+    font-size: 4rem; 
+    padding: 20px; 
+    border: 2px solid #fff; 
+    border-radius: 10px; 
+    background-color: #61dafb; 
+    color: #282c34; 
+    font-weight: bold;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); 
+    transition: background-color 0.3s; 
+}
 
-       h1 {
-            font-size: 2rem;
-       }
+a:link, a:visited, a:active, a:hover {
+    color: #fff;
+}
 
+h1 {
+    font-size: 2rem;
+}
+
+/* Media queries for mobile */
+@media (max-width: 600px) {
+    #clock {
+        font-size: 2rem; /* Adjust font size on mobile */
+    }
+
+    h1 {
+        font-size: 1.5rem; /* Adjust heading size on mobile */
+    }
+}
     </style>
     <script>
         const initialTimestamp = <?= $ntpTimestamp ?> * 1000;
