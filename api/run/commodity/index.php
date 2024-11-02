@@ -22,7 +22,8 @@ function getNTPTime($host = 'ntp.pagasa.dost.gov.ph') {
     // Close the socket
     socket_close($socket);
 
-    return date('Y-m-d H:i:s', $timestamp);
+    // Convert to UTC+8
+    return date('Y-m-d H:i:s', $timestamp + 8 * 3600);
 }
 
 $ntpTime = getNTPTime();
@@ -34,6 +35,34 @@ $ntpTime = getNTPTime();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NTP Time</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            font-family: Arial, sans-serif;
+            background-color: #282c34; /* Darker background */
+            color: #fff; /* White text color */
+            margin: 0; /* Remove default margin */
+        }
+        #clock {
+            text-align: center; /* Center the text */
+            font-size: 2rem; /* Large font size for the clock */
+            padding: 20px; /* Padding around the clock */
+            border: 2px solid #fff; /* White border around the clock */
+            border-radius: 10px; /* Rounded corners */
+            background-color: #61dafb; /* Light blue background */
+            color: #282c34; /* Dark text color */
+            font-weight: bold; /* Make text bold */
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Soft shadow effect */
+            transition: background-color 0.3s; /* Smooth background transition */
+        }
+        #clock:hover {
+            background-color: #21a1f1; /* Change background color on hover */
+        }
+    </style>
     <script>
         // Get the initial NTP time from PHP
         const initialTime = new Date("<?= $ntpTime ?>").getTime();
@@ -41,7 +70,12 @@ $ntpTime = getNTPTime();
 
         function updateClock() {
             const currentTime = new Date(Date.now() - offset);
-            document.getElementById('clock').textContent = currentTime.toLocaleString();
+            const options = { hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: true };
+            const formattedTime = currentTime.toLocaleString('en-US', options);
+            const formattedDate = currentTime.toLocaleDateString('en-US', { month: 'long', day: '2-digit', year: 'numeric' });
+            const formattedDay = currentTime.toLocaleString('en-US', { weekday: 'long' });
+
+            document.getElementById('clock').innerHTML = formattedTime + '<br>' + formattedDate + '<br>' + formattedDay;
         }
 
         setInterval(updateClock, 1000); // Update every second
