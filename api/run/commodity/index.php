@@ -65,6 +65,7 @@ a:link, a:visited, a:active, a:hover {
 h1 {
     font-size: 2rem;
     text-align: center; 
+    margin-top: 50px;
 }
 
 @media (max-width: 600px) {
