@@ -25,7 +25,7 @@ $ntpTimestamp = getNTPTime();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Philippine Standard Time (PhST) by TheDoggyBrad Software Labs</title>
     <style>
-  body {
+body {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -37,7 +37,12 @@ $ntpTimestamp = getNTPTime();
     margin: 0;
 }
 
+h1 {
+    margin-bottom: 20px; 
+}
+
 #clock {
+    flex-shrink: 0; 
     text-align: center; 
     font-size: 4rem; 
     padding: 20px; 
@@ -49,6 +54,7 @@ $ntpTimestamp = getNTPTime();
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); 
     transition: background-color 0.3s; 
 }
+
 
 a:link, a:visited, a:active, a:hover {
     color: #fff;
