@@ -59,9 +59,6 @@ $ntpTimestamp = getNTPTime();
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); 
             transition: background-color 0.3s; 
         }
-        #clock:hover {
-            background-color: #21a1f1; 
-        }
     </style>
     <script>
         // Get the initial NTP timestamp from PHP
@@ -78,7 +75,18 @@ $ntpTimestamp = getNTPTime();
             document.getElementById('clock').innerHTML = formattedTime + '<br>' + formattedDate + '<br>' + formattedDay;
         }
 
+        // Function to cycle background color
+        const colors = ['#61dafb', '#21a1f1', '#282c34', '#fff', '#61dafb']; // Add any colors you want to cycle through
+        let currentColorIndex = 0;
+
+        function cycleColors() {
+            const clockElement = document.getElementById('clock');
+            clockElement.style.backgroundColor = colors[currentColorIndex];
+            currentColorIndex = (currentColorIndex + 1) % colors.length;
+        }
+
         setInterval(updateClock, 1000); 
+        setInterval(cycleColors, 1000); // Change color every second
         updateClock(); 
     </script>
 </head>
