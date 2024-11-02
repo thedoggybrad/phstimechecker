@@ -1,29 +1,17 @@
 <?php
-// ntp_time.php
-
 function getNTPTime($host = 'ntp.pagasa.dost.gov.ph') {
     $ntpServer = $host;
     $port = 123; 
     $timeout = 1; 
-
-    // Create a socket
     $socket = socket_create(AF_INET, SOCK_DGRAM, SOL_UDP);
     socket_set_option($socket, SOL_SOCKET, SO_RCVTIMEO, ['sec' => $timeout, 'usec' => 0]);
-
-    // NTP packet
-    $msg = "\010" . str_repeat("\0", 47); // NTP request packet
+    $msg = "\010" . str_repeat("\0", 47); 
     socket_sendto($socket, $msg, strlen($msg), 0, $ntpServer, $port);
     socket_recvfrom($socket, $recvBuffer, 48, 0, $ntpServer, $port);
-    
-    // Unpack the received NTP time
     $data = unpack('N12', $recvBuffer);
-    $timestamp = $data[9] - 2208988800; // Convert to Unix timestamp
-
-    // Close the socket
+    $timestamp = $data[9] - 2208988800;
     socket_close($socket);
-
-    // Convert to UTC+8
-    return $timestamp + 8 * 3600; // Return the Unix timestamp adjusted to UTC+8
+    return $timestamp + 8 * 3600; 
 }
 
 $ntpTimestamp = getNTPTime();
@@ -61,8 +49,7 @@ $ntpTimestamp = getNTPTime();
         }
     </style>
     <script>
-        // Get the initial NTP timestamp from PHP
-        const initialTimestamp = <?= $ntpTimestamp ?> * 1000; // Already in UTC+8
+        const initialTimestamp = <?= $ntpTimestamp ?> * 1000;
 
         function updateClock() {
             const currentTime = new Date(initialTimestamp + (Date.now() - initialTimestamp));
@@ -74,9 +61,8 @@ $ntpTimestamp = getNTPTime();
 
             document.getElementById('clock').innerHTML = formattedTime + '<br>' + formattedDate + '<br>' + formattedDay;
         }
-
-        // Function to cycle background color
-        const colors = ['#61dafb', '#21a1f1', '#ffffff', '#f39c12', '#e74c3c']; // Excludes #282c34
+        
+        const colors = ['#61dafb', '#21a1f1', '#ffffff', '#f39c12', '#e74c3c'];
         let currentColorIndex = 0;
 
         function cycleColors() {
@@ -86,13 +72,15 @@ $ntpTimestamp = getNTPTime();
         }
 
         setInterval(updateClock, 1000); 
-        setInterval(cycleColors, 1000); // Change color every second
+        setInterval(cycleColors, 1000); 
         updateClock(); 
     </script>
 </head>
 <body>
     <h1>Philippine Standard Time</h1>
     <div id="clock">Please Wait.....</div>
-    <p style="margin-top: 30px;">Time brought to you by Time Service Unit of the Philippine Atmospheric, Geophysical and Astronomical Services Administration via its NTP server.</p>
+    <p style="margin-top: 30px;">The time brought to you by <a href="https://www.pagasa.dost.gov.ph/astronomy">TSU-PAGASA</a> via their NTP server.<br>
+    ©TheDoggyBrad Software Labs. Licensed under the <a href="https://github.com/thedoggybrad/pagasatimechecker/blob/main/LICENSE">MIT-0 License</a>.
+    </p>
 </body>
 </html>
