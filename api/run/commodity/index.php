@@ -26,20 +26,24 @@ $ntpTimestamp = getNTPTime();
     <title>Philippine Standard Time (PhST) by TheDoggyBrad Software Labs</title>
     <style>
 body {
+    margin: 0;
+    background-color: #282c34; 
+    color: #fff; 
+    font-family: Arial, sans-serif; 
+}
+
+#main-container {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     height: 100vh;
-    font-family: Arial, sans-serif;
-    background-color: #282c34; 
-    color: #fff; 
-    margin: 0;
 }
 
 h1 {
     margin-bottom: 20px; 
-    overflow: auto;
+    font-size: 2rem;
+    text-align: center; 
 }
 
 #clock {
@@ -54,18 +58,10 @@ h1 {
     font-weight: bold;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); 
     transition: background-color 0.3s; 
-    overflow: auto;
 }
-
 
 a:link, a:visited, a:active, a:hover {
     color: #fff;
-}
-
-h1 {
-    font-size: 2rem;
-    text-align: center; 
-    margin-top: 50px;
 }
 
 @media (max-width: 600px) {
@@ -84,7 +80,6 @@ h1 {
         margin-bottom: 10px; 
     }
 }
-
     </style>
     <script>
         const initialTimestamp = <?= $ntpTimestamp ?> * 1000;
@@ -115,10 +110,14 @@ h1 {
     </script>
 </head>
 <body>
-    <h1 style="text-align: center;">Philippine Standard Time (PhST)</h1>
-    <div id="clock">Please Wait.....</div>
-    <p style="margin-top: 30px; margin-bottom: 20px;  text-align: center;">The time brought to you by <a href="https://www.pagasa.dost.gov.ph/astronomy">TSU-PAGASA</a> via their NTP server.<br>
-    ©TheDoggyBrad Software Labs. Licensed under the <a href="https://github.com/thedoggybrad/pagasatimechecker/blob/main/LICENSE">MIT-0 License</a>.
-    </p>
+    <div id="main-container">
+        <h1>Philippine Standard Time (PhST)</h1>
+        <div id="clock">Please Wait.....</div>
+        <p style="margin-top: 30px; margin-bottom: 20px; text-align: center;">
+            The time brought to you by <a href="https://www.pagasa.dost.gov.ph/astronomy">TSU-PAGASA</a> via their NTP server.<br>
+            ©TheDoggyBrad Software Labs. Licensed under the <a href="https://github.com/thedoggybrad/pagasatimechecker/blob/main/LICENSE">MIT-0 License</a>.
+        </p>
+    </div>
 </body>
+
 </html>
