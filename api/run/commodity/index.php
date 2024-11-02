@@ -23,10 +23,10 @@ function getNTPTime($host = 'ntp.pagasa.dost.gov.ph') {
     socket_close($socket);
 
     // Convert to UTC+8
-    return date('Y-m-d H:i:s', $timestamp + 8 * 3600);
+    return $timestamp + 8 * 3600; // Return the Unix timestamp adjusted to UTC+8
 }
 
-$ntpTime = getNTPTime();
+$ntpTimestamp = getNTPTime();
 ?>
 
 <!DOCTYPE html>
@@ -64,25 +64,27 @@ $ntpTime = getNTPTime();
         }
     </style>
     <script>
-        // Get the initial NTP time from PHP
-        const initialTime = new Date("<?= $ntpTime ?>").getTime();
-        const offset = new Date().getTime() - initialTime;
+        // Get the initial NTP timestamp from PHP
+        const initialTimestamp = <?= $ntpTimestamp ?> * 1000; // Convert to milliseconds
+        const offset = Date.now() - initialTimestamp;
 
         function updateClock() {
             const currentTime = new Date(Date.now() - offset);
-            const options = { hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: true };
-            const formattedTime = currentTime.toLocaleString('en-US', options);
-            const formattedDate = currentTime.toLocaleDateString('en-US', { month: 'long', day: '2-digit', year: 'numeric' });
+            const optionsTime = { hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: true };
+            const formattedTime = currentTime.toLocaleString('en-US', optionsTime);
+            const optionsDate = { month: 'long', day: '2-digit', year: 'numeric' };
+            const formattedDate = currentTime.toLocaleDateString('en-US', optionsDate);
             const formattedDay = currentTime.toLocaleString('en-US', { weekday: 'long' });
 
             document.getElementById('clock').innerHTML = formattedTime + '<br>' + formattedDate + '<br>' + formattedDay;
         }
 
         setInterval(updateClock, 1000); // Update every second
+        updateClock(); // Initial call to display the time immediately
     </script>
 </head>
 <body>
     <h1>NTP Time</h1>
-    <div id="clock"><?= $ntpTime ?></div>
+    <div id="clock"></div>
 </body>
 </html>
