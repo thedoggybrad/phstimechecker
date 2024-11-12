@@ -21,13 +21,19 @@ $ntpTimestamp = getNTPTime();
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-  <meta name="description" content="A simple Philippine Standard Time Checker.">
-  <meta name="keywords" content="PAGASA, Time, PAGASA, PhST, UTC+8, TheDoggyBrad, Time Check, DST">
-  <meta name="author" content="TheDoggyBrad Software Labs">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Philippine Standard Time (PhST) by TheDoggyBrad Software Labs</title>
-    <style>
+   <meta charset="UTF-8">
+   <meta name="description" content="A simple Philippine Standard Time Checker.">
+   <meta name="keywords" content="PAGASA, Time, PAGASA, PhST, UTC+8, TheDoggyBrad, Time Check, DST">
+   <meta name="author" content="TheDoggyBrad Software Labs">
+   <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
+   <link rel="icon" type="image/x-icon" href="favicon/favicon.ico">
+   <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+  <link rel="manifest" href="favicon/site.webmanifest">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Philippine Standard Time (PhST) by TheDoggyBrad Software Labs</title>
+  
+   <style>
 body {
     margin: 0;
     background-color: #282c34; 
