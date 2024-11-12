@@ -60,7 +60,7 @@ h1 {
     color: #282c34; 
     font-weight: bold;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); 
-    transition: background-color 0.3s; 
+    transition: background-color 0.5s; 
 }
 
 a:link, a:visited, a:active, a:hover {
