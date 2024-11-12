@@ -22,6 +22,9 @@ $ntpTimestamp = getNTPTime();
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+  <meta name="description" content="A simple Philippine Standard Time Checker.">
+  <meta name="keywords" content="PAGASA, Time, PAGASA, PhST, UTC+8, TheDoggyBrad, Time Check, DST">
+  <meta name="author" content="TheDoggyBrad Software Labs">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Philippine Standard Time (PhST) by TheDoggyBrad Software Labs</title>
     <style>
