@@ -6,6 +6,10 @@
     }
   },
   "routes": [
+    {
+      "src": "/favicon/(.*)",
+      "dest": "/favicon/$1"
+    },
     { "src": "/(.*)", "dest": "/api/run/commodity/index.php" }
   ]
 }
