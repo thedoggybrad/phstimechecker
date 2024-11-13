@@ -44,6 +44,7 @@ $ntpTimestamp = getNTPTime();
   <meta name="twitter:description" content="A simple Philippine Standard Time Checker.">
   <meta name="twitter:image" content="favicon/Img.png">
   <meta property="og:logo" content="favicon/apple-touch-icon.png" />
+  <meta name="google-site-verification" content="i75bK6WPK0pIchr3PaYsTtuaDdkr1ocmy6KSuI1i5g0" />
 
    <style>
 body {
