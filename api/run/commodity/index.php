@@ -43,6 +43,7 @@ $ntpTimestamp = getNTPTime();
   <meta name="twitter:title"  content="Philippine Standard Time (PhST) by TheDoggyBrad Software Labs">
   <meta name="twitter:description" content="A simple Philippine Standard Time Checker.">
   <meta name="twitter:image" content="favicon/Img.png">
+  <meta property="og:logo" content="favicon/apple-touch-icon.png" />
 
    <style>
 body {
