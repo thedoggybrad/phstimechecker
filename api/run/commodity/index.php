@@ -32,7 +32,18 @@ $ntpTimestamp = getNTPTime();
   <link rel="manifest" href="favicon/site.webmanifest">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Philippine Standard Time (PhST) by TheDoggyBrad Software Labs</title>
-  
+  <meta property="og:url" content="https://phstimechecker.vercel.app/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Philippine Standard Time (PhST) by TheDoggyBrad Software Labs">
+  <meta property="og:description" content="A simple Philippine Standard Time Checker.">
+  <meta property="og:image" content="favicon/Img.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta property="twitter:domain" content="phstimechecker.vercel.app">
+  <meta property="twitter:url" content="https://phstimechecker.vercel.app/">
+  <meta name="twitter:title"  content="Philippine Standard Time (PhST) by TheDoggyBrad Software Labs">
+  <meta name="twitter:description" content="A simple Philippine Standard Time Checker.">
+  <meta name="twitter:image" content="favicon/Img.png">
+
    <style>
 body {
     margin: 0;
